@@ -3,7 +3,7 @@ FROM g3wsuite/g3w-suite-deps:latest
 LABEL maintainer="Gis3W" Description="This image is used to install python requirements and code for g3w-suite deployment" Vendor="Gis3W" Version="1.0"
 # Based on main CI Docker from  g3w-suite, checkout code + caching,
 # custom settings file
-RUN apt install git -y && \
+RUN apt update && apt install git -y && \
     git clone https://github.com/g3w-suite/g3w-admin.git --single-branch --branch dev /code && \
     cd /code && \
     git checkout dev
